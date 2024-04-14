@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "fetch": "^1.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.4",
+    "path": "^0.12.7",
+    "process": "^0.11.10",
+    "session": "^0.1.0"
+  },
+  "name": "final-backend",
+  "version": "1.0.0",
+  "description": "final trabalho",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ma25th/Final-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ma25th/Final-Backend/issues"
+  },
+  "homepage": "https://github.com/Ma25th/Final-Backend#readme"
+}

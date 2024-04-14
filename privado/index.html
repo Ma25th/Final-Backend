@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Biblioteca da Cidade</h1>
+
+    <div class="button-container">
+      <a href="cadastrar_aluno.html" class="button2">Cadastrar Aluno</a>
+      <a href="cadastrar_livro.html" class="button2">Cadastrar Livro</a>
+    </div>
+    <div class="search-container">
+      <input type="text" id="searchInput" onkeyup="searchBooks()" placeholder="Pesquisar por título...">
+    </div>
+  </header>
+  <main>
+    <div class="library-container">
+      <div class="books-wrapper">
+        <div class="book"  id="book1">
+          <h2>Dom Casmurro</h2>
+          <p>Autor: Machado de Assis (Ano de Publicação: 2019)</p>
+          <p>Gênero: Romance</p>
+          <button onclick="toggleSynopsis('book1')">Ver Sinopse</button>
+          <p class="synopsis" id="synopsis_book1">Em Dom Casmurro, o narrador Bento Santiago retoma a infância que passou na Rua de Matacavalos e conta a história do amor e das desventuras que viveu com Capitu, uma das personagens mais enigmáticas e intrigantes da literatura brasileira. Nas páginas deste romance, encontra-se a versão de um homem perturbado pelo ciúme, que revela aos poucos sua psicologia complexa e enreda o leitor em sua narrativa ambígua acerca do acontecimento ou não do adultério da mulher com olhos de ressaca, uma das maiores polêmicas da literatura brasileira.</p>
+        </div>
+        <div class="book"  id="book2">
+          <h2>O Pequeno Príncipe</h2>
+          <p>Autor: Antoine de Saint-Exupéry (Ano de Publicação: 2018)</p>
+          <p>Gênero: Literatura</p>
+          <button onclick="toggleSynopsis('book2')">Ver Sinopse</button>
+          <p class="synopsis" id="synopsis_book2">Nesta história que marcou gerações de leitores em todo o mundo, um piloto cai com seu avião no deserto do Saara e encontra um pequeno príncipe, que o leva a uma aventura filosófica e poética através de planetas que encerram a solidão humana.</p>
+        </div>
+        <div class="book" id="book3">
+          <h2>As aventuras de Sherlock Holmes</h2>
+          <p>Autor: Arthur Conan Doyle (Ano de Publicação: 2019)</p>
+          <p>Gênero: Ficção</p>
+          <button onclick="toggleSynopsis('book3')">Ver Sinopse</button>
+          <p class="synopsis" id="synopsis_book3">Sherlock Holmes é um detetive britânico enigmático e pedante do final do século XIX e início do século XX. Ele utiliza a metodologia científica e a lógica dedutiva para solucionar seus casos e conta com a ajuda de seu fiel amigo e parceiro dr. Watson. Observação, perspicácia e um pouco de intuição são alguns dos instrumentos usados por Sherlock Holmes para desvendar os seis curiosos casos reunidos nesta obra e narrados pelo atento doutor Watson.</p>
+        </div>
+        <div class="book"  id="book4">
+          <h2>Dom Quixote</h2>
+          <p>Autor: Miguel De Cervantes (Ano de Publicação: 2018)</p>
+          <p>Gênero: Romance</p>
+          <button onclick="toggleSynopsis('book4')">Ver Sinopse</button>
+          <p class="synopsis" id="synopsis_book4">A obra criada por miguel de cervantes e considerada por muitos especialistas como a narrativa de ficção mais importante de todos os tempos. Esta publicação da pé da letra oferece ao leitor a oportunidade de entrar em contato com a engenhosidade de uma obra-prima da literatura universal. Por meio de uma linguagem acessível, e possível acompanhar, ao lado dos eternos dom quixote e sancho panca, algumas das aventuras mais famosas da historia da literatura.</p>
+    </div>
+    <div class="modal" id="modal">
+      <div class="modal-content" id="modalContent">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalSynopsis"></div>
+      </div>
+    </div>
+  </main>
+
+  
+  <footer>
+    <p>MMMMD-Todos os direiros reservados</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Alunos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('livros.jpg');
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    form {
+      max-width: 600px;
+      width: 100%;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    input[type="submit"],
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    input[type="submit"]:hover,
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h1>Cadastro de Alunos</h1>
+      <form id="cadastrar_aluno">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <label for="ra">RA (Registro Acadêmico):</label>
+        <input type="text" id="ra" name="ra" required><br><br>
+        <label for="classe">Classe:</label>
+        <input type="text" id="classe" name="classe" required><br><br>
+        <label for="contato">Telefone:</label>
+        <input type="tel" id="contato" name="contato" required pattern="[0-9]{10,11}"><br><br>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <button type="submit">Cadastrar Aluno</button>
+        <button type="button" onclick="window.location.href='index.html'">Voltar à Página Inicial</button>
+      </form>
+    </div>
+    <br/>
+    <div id="mensagem"></div>
+    <br/>
+    <div class="container" id="espacoTabela"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="scriptsprivado/cadealuno.js"></script>
+</body>
+</html>
