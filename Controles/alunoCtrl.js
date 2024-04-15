@@ -1,21 +1,19 @@
 import Aluno from "../Modelos/Alunos.js";
-
 export default class AlunoCtrl {
     gravar(requisicao, resposta) {
         resposta.type('application/json');
 
         if (requisicao.method === "POST" && requisicao.is('application/json')) {
-            const { nomeAluno, radoAluno, classeAluno, contatoAluno, emailAluno } = requisicao.body; // Nomes dos campos ajustados
+            const { nomeAluno, radoAluno, classeAluno, contatoAluno, emailAluno } = requisicao.body; 
 
             if (nomeAluno && radoAluno && classeAluno && contatoAluno && emailAluno) {
-                // A ordem dos parâmetros deve corresponder à ordem do construtor de Aluno.
                 const aluno = new Aluno(nomeAluno, radoAluno, classeAluno, contatoAluno, emailAluno); 
                 aluno.gravar().then(() => {
                     resposta.status(201);
                     resposta.json({
                         "status": true,
                         "mensagem": "Aluno gravado com sucesso!",
-                        "ra_aluno": aluno.radoAluno // Atenção para o uso da propriedade correta aqui.
+                        "ra_aluno": aluno.radoAluno 
                     });
                 }).catch((erro) => {
                     resposta.status(500);
@@ -39,13 +37,11 @@ export default class AlunoCtrl {
             });
         }
     }
-
-
     atualizar(requisicao, resposta) {
         resposta.type('application/json');
 
         if ((requisicao.method === "PATCH" || requisicao.method === "PUT") && requisicao.is('application/json')) {
-            const { nomeAluno, radoAluno, classeAluno, contatoAluno, emailAluno } = requisicao.body; // Nomes dos campos ajustados
+            const { nomeAluno, radoAluno, classeAluno, contatoAluno, emailAluno } = requisicao.body; 
             const raAluno = requisicao.params.raAluno;
 
             if (raAluno && raAluno > 0 && nomeAluno && radoAluno && classeAluno && contatoAluno && emailAluno) {
@@ -124,9 +120,9 @@ export default class AlunoCtrl {
             const termoDePesquisa = requisicao.query.termo;
 
             const aluno = new Aluno();
-            aluno.consultar(termoDePesquisa).then((alunos) => {
+            aluno.consultar(termoDePesquisa).then((aluno) => {
                 resposta.status(200);
-                resposta.json(alunos);
+                resposta.json(aluno);
             }).catch((erro) => {
                 resposta.status(500);
                 resposta.json({

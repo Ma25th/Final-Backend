@@ -20,7 +20,7 @@ export default class livroCtrl{
 
     
             if (isbn && nomedolivro&& descricao && autor && anodepublicacao && genero){
-                const livro = new Livro(0, isbn, nomedolivro, descricao, autor, anodepublicacao, genero);
+                const livro = new Livro(isbn, nomedolivro, descricao, autor, anodepublicacao, genero);
                 livro.gravar().then(()=>{
                     resposta.status(201);
                     resposta.json({
@@ -105,7 +105,7 @@ export default class livroCtrl{
         if (requisicao.method === "DELETE"){
 
             const isbn = requisicao.params.isbn;
-            if (isbn && isbn > 0){
+            if (isbn){
                 const livro = new Livro(isbn);
                 livro.excluir()
                 .then(()=>{

@@ -9,15 +9,15 @@ import cors from "cors";
 const host='localhost'; 
 const porta = 3000;  
 const corsOptions= {
-    origin: 'http://localhost:3000'
+    origin: '*'
 }
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:3000'  // Permitir apenas requisições do frontend no localhost:3000
+    origin: '*' 
 }));
 app.use(express.urlencoded({extended: true})); 
 app.use(session({
-    secret: 'M1nH4Ch4v3S3cr3t4',
+    secret: 'Secreto',
     resave: false,
     saveUninitialized: true,
     cookie: {

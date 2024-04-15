@@ -6,7 +6,7 @@ const aluCtrl = new AlunoCtrl();
 
 rotaAluno
 .get('/', aluCtrl.consultar)
-.get('/:termo', aluCtrl.consultar)
+.get('/:ra', aluCtrl.consultar)
 .post('/', aluCtrl.gravar)
 .put('/:ra', aluCtrl.atualizar)
 .patch('/:ra', aluCtrl.atualizar)

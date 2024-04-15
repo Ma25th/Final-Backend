@@ -1,5 +1,8 @@
 document.getElementById('cadastrar_aluno').addEventListener('submit', validarFormulario);
 window.onload=buscarAlunos();
+document.addEventListener('DOMContentLoaded', function() {
+    buscarAlunos();
+});
 function validarFormulario(event) {
     event.preventDefault();
     const form = event.target;
@@ -45,21 +48,11 @@ function formularioAluno(aluno) {
 }
 
 function buscarAlunos() {
-    fetch('http://localhost:5000/alunos', { method: 'GET' })
-    .then(resposta =>{return resposta.json();}).then((dados)=>{ 
-        if (Array.isArray(dados)) {
-            exibirTabelaAlunos(dados);
-        }
-        else {
-            mostrarMensagem(dados.mensagem, false);
-        }
-    })
-    .catch(erro => {
-        mostrarMensagem(erro.message, false);
-    });
+    fetch('http://localhost:5000/alunos')
+    .then(response => response.json())
+    .then(dados => exibirTabelaAlunos(dados))
+    .catch(erro => console.error('Falha ao buscar alunos:', erro));
 }
-
-
 function mostrarMensagem(mensagem, sucesso) {
     const divMensagem = document.getElementById('mensagem');
     divMensagem.innerHTML = sucesso
@@ -70,10 +63,10 @@ function mostrarMensagem(mensagem, sucesso) {
     }, 5000);
 }
 
-function exibirTabelaAlunos(listaAlunos) {
+function exibirTabelaAlunos(alunos) {
     const espacoTabela = document.getElementById('espacoTabela');
     espacoTabela.innerHTML = '';
-    if (listaAlunos.length > 0) {
+    if (alunos.length > 0) {
         const tabela = document.createElement('table');
         tabela.classList.add('table', 'table-striped', 'table-hover');
         const cabecalho = document.createElement('thead');
@@ -85,26 +78,11 @@ function exibirTabelaAlunos(listaAlunos) {
                 <th>Classe</th>
                 <th>Telefone</th>
                 <th>E-mail</th>
-                <th>Ações</th>
+                <th>Ações</th>
             </tr>`;
         tabela.appendChild(cabecalho);
         const corpo = document.createElement('tbody');
-        for (let i=0; i < listaAlunos.length; i++) {
-            const aluno = listaAlunos[i];
-            const linha = document.createElement('tr');
-            linha.innerHTML = `
-                <td>${i + 1}</td>
-                <td>${aluno.nomeAluno}</td>
-                <td>${aluno.radoAluno}</td>
-                <td>${aluno.classeAluno}</td>
-                <td>${aluno.contatoAluno}</td>
-                <td>${aluno.emailAluno}</td>
-                <td>
-                    <!-- Botões de ação aqui, como editar e excluir -->
-                </td>`;
-            corpo.appendChild(linha);
-        }
-        listaAlunos.forEach((aluno, index) => {
+        alunos.forEach((aluno, index) => {
             const linha = document.createElement('tr');
             linha.innerHTML = `
                 <td>${index + 1}</td>
@@ -114,7 +92,7 @@ function exibirTabelaAlunos(listaAlunos) {
                 <td>${aluno.contatoAluno}</td>
                 <td>${aluno.emailAluno}</td>
                 <td>
-                    <button class="btn btn-danger" onclick="excluirAluno(${aluno.radoAluno})">Excluir</button>
+                    <!-- Botões de ação aqui, como editar e excluir -->
                 </td>`;
             corpo.appendChild(linha);
         });
@@ -124,3 +102,6 @@ function exibirTabelaAlunos(listaAlunos) {
         espacoTabela.innerHTML = '<p>Nenhum aluno encontrado!</p>';
     }
 }
+
+
+

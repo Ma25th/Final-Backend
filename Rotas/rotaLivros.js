@@ -10,7 +10,7 @@ rotaLivro
 .post('/', liCtrl.gravar)
 .put('/:codigo', liCtrl.atualizar)
 .patch('/:codigo', liCtrl.atualizar)
-.delete('/:codigo', liCtrl.excluir);
+.delete('/:isbn', liCtrl.excluir);
 
 
 export default rotaLivro;

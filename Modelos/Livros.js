@@ -90,12 +90,11 @@ async gravar(){
     toJSON(){
         return {
             "isbn": this.#isbn,
-            "Nome do livro": this.#nomedolivro,
-            "Descrição": this.#descricao,
-            "Autor": this.#autor,
-            "Ano de publicacao": this.#anodepublicacao,
-            "Ano de publicacao": this.#anodepublicacao,
-            "Genero": this.#genero
+            "nomedolivro": this.#nomedolivro,
+            "descricao": this.#descricao,
+            "autor": this.#autor,
+            "anodepublicacao": this.#anodepublicacao,
+            "genero": this.#genero
         }
     }
 
@@ -125,12 +124,11 @@ toString(){
 toJSON(){
     return {
         "isbn": this.#isbn,
-        "Nome do livro": this.#nomedolivro,
-        "Descrição": this.#descricao,
-        "Autor": this.#autor,
-        "Ano de publicacao": this.#anodepublicacao,
-        "Ano de publicacao": this.#anodepublicacao,
-        "Genero": this.#genero
+        "nomedolivro": this.#nomedolivro,
+        "descricao": this.#descricao,
+        "autor": this.#autor,
+        "anodepublicacao": this.#anodepublicacao,
+        "genero": this.#genero
     }
 }
 }

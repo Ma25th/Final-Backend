@@ -2,7 +2,7 @@ import conectar from "./Conexao.js";
 import Aluno from "../Modelos/Alunos.js";
 
 export default class AlunoDAO {
-    // Função para gravar um novo aluno no banco de dados
+    
     async gravar(aluno) {
         if (aluno instanceof Aluno) {
             const conexao = await conectar();
@@ -19,7 +19,7 @@ export default class AlunoDAO {
         }
     }
 
-    // Função para atualizar um aluno existente no banco de dados
+    
     async atualizar(aluno) {
         if (aluno instanceof Aluno) {
             const conexao = await conectar();
@@ -36,7 +36,7 @@ export default class AlunoDAO {
         }
     }
 
-    // Função para excluir um aluno do banco de dados
+  
     async excluir(aluno) {
         if (aluno instanceof Aluno) {
             const conexao = await conectar();
@@ -46,7 +46,7 @@ export default class AlunoDAO {
         }
     }
 
-    // Função para consultar alunos no banco de dados
+    
     async consultar(termoDePesquisa) {
         const conexao = await conectar();
         let sql = "";

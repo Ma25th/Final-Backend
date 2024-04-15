@@ -14,7 +14,7 @@ export default class Aluno {
         this.#emailAluno = emailAluno;
     }
 
-    // Getters
+    
     get nomeAluno() {
         return this.#nomeAluno;
     }
@@ -35,7 +35,7 @@ export default class Aluno {
         return this.#emailAluno;
     }
 
-    // Setters
+    
     set nomeAluno(novoNomeAluno) {
         this.#nomeAluno = novoNomeAluno;
     }
@@ -56,7 +56,7 @@ export default class Aluno {
         this.#emailAluno = novoEmailAluno;
     }
 
-    // Métodos para interação com o banco de dados
+   
     async gravar() {
         const dao = new AlunoDAO();
         return await dao.gravar(this);
@@ -77,7 +77,6 @@ export default class Aluno {
         return await dao.consultar(termoDePesquisa);
     }
 
-    // Métodos utilitários
     toString() {
         return `Nome do Aluno: ${this.#nomeAluno}, RA: ${this.#radoAluno}`;
     }
