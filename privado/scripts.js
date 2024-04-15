@@ -3,12 +3,11 @@ function toggleSynopsis(bookId) {
   var modalContent = document.getElementById("modalContent");
   var modalSynopsis = document.getElementById("modalSynopsis");
   var book = document.getElementById(bookId);
-  var bookSynopsis = book.querySelector(".synopsis").innerText; // Alterado para pegar a sinopse
-  
-  // Atualiza o conteúdo da sinopse no modal
+  var bookSynopsis = book.querySelector(".synopsis").innerText;
+ 
   modalSynopsis.textContent = bookSynopsis;
   
-  // Exibe o modal
+
   modal.style.display = "block";
 }
 
